@@ -1,5 +1,5 @@
 const bcrypt = require('bcrypt');
-const { loadUsers } = require('../models/userModel');
+const { loadUsers, saveUsers } = require('../models/userModel');
 
 // Register user into users.json if it doesn't exist
 const registerUser = (req, res) => {
@@ -12,6 +12,7 @@ const registerUser = (req, res) => {
     }
     const newUser = {id: users.length + 1, username, password, email};
     users.push(newUser);
+    saveUsers(users);
     res.status(201).json({message: 'User registered successfully'});
 }
 

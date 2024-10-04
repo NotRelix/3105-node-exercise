@@ -8,6 +8,12 @@ const loadUsers = () => {
     return JSON.parse(data);
 };
 
+const saveUsers = (users) => {
+    console.log(`Saving users to: ${userDatapath}`);
+    fs.writeFileSync(userDatapath, JSON.stringify(users, null, 2));
+};
+
 module.exports = {
     loadUsers,
+    saveUsers,
 }
