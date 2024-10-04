@@ -10,5 +10,23 @@
     "username": "testuser",
     "password": "$2b$10$fHtSRr0Gq1V9mvuoPobD.eZAMXWkv4nlQ0cUuxxXAJmyjpK9.sxJy",
     "email": "testuser@example.com"
+  },
+  {
+    "id": 3,
+    "username": "reece",
+    "password": "$2b$10$s5chkw6mft7HvqwYZQYThuEHedma6ZD1/4wimzlAwukTa5ZUhIhhC",
+    "email": "reece@gmail.com"
+  },
+  {
+    "id": 4,
+    "username": "reece2",
+    "password": "$2b$10$hvGSt.5/.NOR3I3J28dSee6JCxyjOdb47X3ruDJI6Yz2izC21p2Jq",
+    "email": "reece@gmail.com"
+  },
+  {
+    "id": 5,
+    "username": "reece3",
+    "password": "$2b$10$qXgRU3GNcvE.Ms8CmYEkPuhJOCtm.z4L1Dpe1wShg7QTToukwKVL6",
+    "email": "reece@gmail.com"
   }
 ]
