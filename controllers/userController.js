@@ -31,11 +31,25 @@ const loginUser = (req, res) => {
     }
 
     const token = jwt.sign({id: user.id}, 'secrettoken', {expiresIn: '1h'});
-    console.log(token);
+    // console.log(token);
     res.json({token});
+}
+
+// Shows your personal information
+const getProfile = (req, res) => {
+    const {username} = req.body;
+    const users = loadUsers();
+    const user = users.find(user => user.username === username);
+
+    if (!user) {
+        return res.status(404).json({message: 'User not found'});
+    }
+
+    res.json({username: user.username, password: user.password, email: user.email});
 }
 
 module.exports = {
     registerUser,
     loginUser,
+    getProfile,
 }
