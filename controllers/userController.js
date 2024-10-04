@@ -37,9 +37,9 @@ const loginUser = (req, res) => {
 
 // Shows your personal information
 const getProfile = (req, res) => {
-    const {username} = req.body;
+    const userId = req.user.id;
     const users = loadUsers();
-    const user = users.find(user => user.username === username);
+    const user = users.find(user => user.id === userId);
 
     if (!user) {
         return res.status(404).json({message: 'User not found'});
