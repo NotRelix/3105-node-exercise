@@ -27,7 +27,7 @@ const loginUser = (req, res) => {
 
     const user = users.find(user => user.username === username);
     if (!user || !bcrypt.compareSync(password, user.password)) {
-        return res.send(401).json({message: 'Invalid credentials'});
+        return res.sendStatus(401).json({message: 'Invalid credentials'});
     }
 
     const token = jwt.sign({id: user.id}, 'secrettoken', {expiresIn: '1h'});
@@ -45,7 +45,7 @@ const getProfile = (req, res) => {
         return res.status(404).json({message: 'User not found'});
     }
 
-    res.json({username: user.username, password: user.password, email: user.email});
+    res.json({username: user.username, email: user.email});
 }
 
 module.exports = {
