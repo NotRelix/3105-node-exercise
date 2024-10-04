@@ -10,9 +10,12 @@ const registerUser = (req, res) => {
     if (existingUser) {
         return res.status(400).json({message: 'User already exists'});
     }
-    const newUser = {id: users.length + 1, username, password, email};
+
+    const hashedPassword = bcrypt.hashSync(password, 10);
+    const newUser = {id: users.length + 1, username, password: hashedPassword, email};
     users.push(newUser);
     saveUsers(users);
+    
     res.status(201).json({message: 'User registered successfully'});
 }
 
